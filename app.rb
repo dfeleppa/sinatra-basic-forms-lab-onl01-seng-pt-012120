@@ -10,8 +10,7 @@ class App < Sinatra::Base
   end
   
   post '/puppy' do
-  @new_puppy Puppy.new(params(:))
-    p = PigLatinizer.new(params[:name,:breed,:age])
+  @new_puppy Puppy.new(params([:name,:breed,:age])
     erb :display_puppy
   end
   
